@@ -57,6 +57,15 @@ h1::after {
   font-size: 40px;
 }
 
+table#users-list {
+  border: 3px solid black;
+}
+
+#users-list th,
+#users-list td {
+  padding: 10px
+}
+
 
 /* ------------------- MEDIA QUERY ------------------- */
 

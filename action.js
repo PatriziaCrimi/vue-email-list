@@ -11,25 +11,25 @@ let app = new Vue({
   el: '#root',
   data: {
     title: 'Vue Email List',
-    emails_quantity: 10,
-    emails_list: []
+    users_quantity: 10,
+    users_list: []
   },  // Closing data
   mounted: function() {
     const self = this;
-    for (let i = 0; i < self.emails_quantity; i++) {
+    for (let i = 0; i < self.users_quantity; i++) {
       axios
       .get('https://flynn.boolean.careers/exercises/api/random/mail')
       .then(function(ajax_call) {
         let user_email = ajax_call.data.response;
-        let name = user_email.split('@')[0];
+        let user_name = user_email.split('@')[0];
         let email_object = {
-          user: name,
+          name: user_name,
           email: user_email,
         };
-        self.emails_list.push(email_object);
+        self.users_list.push(email_object);
       });
     }
-    console.log(self.emails_list);
+    console.log(self.users_list);
   },  // Closing mounted
   methods: {
 
