@@ -44,6 +44,9 @@ let app = new Vue({
             email: user_email,
           };
           self.users_list.push(member_details);
+        } else {
+          // Since it cannot be used the WHILE-LOOP based on the array length (because of ASYNC) it is necessary to add this "i--" to be sure that we are pushing all the emails that we need even if there are some duplicates excluded (no less than users_quantity)
+          i--;
         }
       });
     }
